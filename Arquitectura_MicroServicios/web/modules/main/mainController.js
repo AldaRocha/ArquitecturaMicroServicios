@@ -27,6 +27,11 @@ function pedirLinks(){
                             Swal.fire('', data.error, 'warning');
                             document.querySelector(".spinner-container").classList.add("d-none");
                             let cuerpoDropdownMenu=`<li>
+                                                        <a class="dropdown-item title navHover" onclick="cambiarContraseña();">
+                                                            Cambiar Contraseña
+                                                        </a>
+                                                    </li>
+                                                    <li>
                                                         <a class="dropdown-item title navHover" onclick="cerrarSesion();">
                                                             Cerrar Sesión
                                                         </a>
@@ -36,6 +41,11 @@ function pedirLinks(){
                             Swal.fire('', "Error interno del servidor.", 'error');
                             document.querySelector(".spinner-container").classList.add("d-none");
                             let cuerpoDropdownMenu=`<li>
+                                                        <a class="dropdown-item title navHover" onclick="cambiarContraseña();">
+                                                            Cambiar Contraseña
+                                                        </a>
+                                                    </li>
+                                                    <li>
                                                         <a class="dropdown-item title navHover" onclick="cerrarSesion();">
                                                             Cerrar Sesión
                                                         </a>
@@ -109,6 +119,11 @@ function llenarPantallaMain(data){
     });
     
     let registroCerrarSesion = `<li>
+                                    <a class="dropdown-item title navHover" onclick="cambiarContraseña();">
+                                        Cambiar Contraseña
+                                    </a>
+                                </li>
+                                <li>
                                     <a class="dropdown-item title navHover" onclick="cerrarSesion();">
                                         Cerrar Sesión
                                     </a>
@@ -137,7 +152,23 @@ function pantalla(pantallaId){
                         document.getElementById("contenedorPrincipal").innerHTML=html;
                         import("../"+js[1]+"/"+js[2]+"/"+js[2]+"Controller.js").then(function(controller){
                             modulo=controller;
-                            //modulo.inicializar();
+                            modulo.inicializar();
+                        });
+                    });
+}
+
+function cambiarContraseña(){
+    document.getElementById("contenedorPrincipal").classList.remove("tamanio");
+    
+    fetch("../cambiarcontrasena/vista_cambiarcontrasena.html")
+            .then(function(response){
+                return response.text();
+            })
+                    .then(function(html){
+                        document.getElementById("contenedorPrincipal").innerHTML = html;
+                        import("../cambiarcontrasena/cambiarcontrasenaController.js").then(function(controller){
+                            modulo=controller;
+                            modulo.inicializar();
                         });
                     });
 }

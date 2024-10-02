@@ -60,7 +60,6 @@ function ingresar(){
                             return response.json();
                         })
                                 .then(data=>{
-                                    console.log(data);
                                     if(data.error){
                                         Swal.fire('', data.error, 'warning');
                                         document.querySelector(".spinner-container").classList.add("d-none");

@@ -87,36 +87,19 @@ CREATE VIEW v_pantallas AS
             INNER JOIN pantalla plla ON pppa.PantallaId = plla.PantallaId
             INNER JOIN modulo m ON plla.ModuloId = m.ModuloId
 	ORDER BY PermisoPorPantallaId ASC;
-
-
-
+    
+DROP VIEW IF EXISTS v_usuarios;
+CREATE VIEW v_usuarios AS
 	SELECT	 u.UsuarioId
-			
+			,u.TipoUsuarioId
+			,u.Cuenta
+			,u.Email
+			,u.Activo
+            
+            ,p.PersonaId
+			,p.Nombre
+            
             ,upp.PerfilId
-            
-            ,p.Nombre AS NombrePerfil
-            
-            ,ppp.PermisoPorPantallaId
-            
-            ,pppa.PermisoId
-            ,pppa.PantallaId
-            
-            ,pso.Identificador AS IdentificadorPermiso
-            ,pso.Nombre AS NombrePermiso
-            
-            ,plla.ModuloId
-            ,plla.Identificador AS IdentificadorPantalla
-            ,plla.Nombre AS NombrePantalla
-            ,plla.Ruta
-            
-            ,m.Identificador AS IdentificadorModulo
-            ,m.Nombre AS NombreModulo
     FROM	usuario u
-			INNER JOIN usuarioporperfil upp ON u.UsuarioId = upp.UsuarioId
-            INNER JOIN perfil p ON upp.PerfilId = p.PerfilId
-            INNER JOIN permisoporperfil ppp ON p.PerfilId = ppp.PerfilId
-            INNER JOIN permisoporpantalla pppa ON ppp.PermisoPorPantallaId = pppa.PermisoPorPantallaId
-            INNER JOIN permiso pso ON pppa.PermisoId = pso.PermisoId
-            INNER JOIN pantalla plla ON pppa.PantallaId = plla.PantallaId
-            INNER JOIN modulo m ON plla.ModuloId = m.ModuloId
-	ORDER BY PermisoPorPantallaId ASC;
+			INNER JOIN persona p ON u.PersonaId = p.PersonaId
+            INNER JOIN usuarioporperfil upp ON u.UsuarioId = upp.UsuarioId;

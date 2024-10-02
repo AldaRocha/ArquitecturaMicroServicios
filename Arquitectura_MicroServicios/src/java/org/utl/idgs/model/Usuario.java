@@ -19,8 +19,10 @@ public class Usuario {
     private int Activo;
     private String LastToken;
     private String DateLastToken;
+    
+    private int PerfilId;
 
-    public Usuario(int UsuarioId, Persona Persona, Tipousuario TipoUsuario, String Cuenta, String Contrasena, String Email, int ReiniciarContrasena, int Activo, String LastToken, String DateLastToken) {
+    public Usuario(int UsuarioId, Persona Persona, Tipousuario TipoUsuario, String Cuenta, String Contrasena, String Email, int ReiniciarContrasena, int Activo, String LastToken, String DateLastToken, int PerfilId) {
         this.UsuarioId = UsuarioId;
         this.Persona = Persona;
         this.TipoUsuario = TipoUsuario;
@@ -31,9 +33,18 @@ public class Usuario {
         this.Activo = Activo;
         this.LastToken = LastToken;
         this.DateLastToken = DateLastToken;
+        this.PerfilId = PerfilId;
     }
 
     public Usuario() {
+    }
+
+    public int getPerfilId() {
+        return PerfilId;
+    }
+
+    public void setPerfilId(int PerfilId) {
+        this.PerfilId = PerfilId;
     }
 
     public int getUsuarioId() {

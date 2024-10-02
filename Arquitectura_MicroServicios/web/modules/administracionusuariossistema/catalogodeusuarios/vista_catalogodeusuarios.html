@@ -1,7 +1,137 @@
+
 <div class="container-fluid justify-content-center me-0" style="margin-top: 65px">
-    <h1>
-        Hola Mundo desde Catalogo de Usuarios
-    </h1>
+    <div class="row" id="detalleCatalogodeUsuarios">
+        <div class="mt-3 col-lg-4 p-2 form-floating align-content-center justify-content-center">
+            <input class="form-control w-100" type="text" id="txtBuscarUsuario"/>
+            <label class="ms-1 mt-1" for="txtBuscarUsuario">
+                Buscar Usuario
+            </label>
+        </div>
+        <div class="mt-3 col-lg-4 p-2 form-floating align-content-center justify-content-center">
+            <h1 class="text-center">
+                Usuarios
+            </h1>
+        </div>
+        <div class="mt-3 col-lg-4 p-2 form-floating align-content-center d-grid justify-content-center">
+            <button class="btn btn-success align-content-center" id="btnMostrarFormularioUsuario" onclick="modulo.setDetalleVisible(false);">
+                <i class="fa-solid fa-circle-plus px-2"></i>
+                Agregar Usuario
+            </button>
+        </div>
+        <div class="card col-lg-12 pt-4 pb-4 ps-0 pe-0 form-floating justify-content-center d-flex">
+            <div class="table-responsive">
+                <div class="col-11 mx-auto">
+                    <table class="table table-hover table-striped me-3" id="tblUsuarios">
+                        <thead>
+                            <tr class="text-center">
+                                <th>Nombre</th>
+                                <th>Nombre de usuario</th>
+                                <th>Correo</th>
+                                <th>Activo</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tbodyUsuarios">
+                            
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="row" id="formularioUsuario">
+        <div class="mt-3 col-lg-4 p-2 form-floating align-content-center justify-content-center">
+            
+        </div>
+        <div class="mt-3 col-lg-4 p-2 form-floating align-content-center justify-content-center">
+            <h1 class="text-center">
+                Usuario
+            </h1>
+        </div>
+        <div class="mt-3 col-lg-4 p-2 form-floating align-content-center d-grid justify-content-center">
+            <button class="btn btn-danger align-content-center" id="btnMostrarRegistroUsuario" onclick="modulo.setDetalleVisible(true);">
+                <i class="fa-solid fa-circle-xmark px-2"></i>
+                Ver Registros
+            </button>
+        </div>
+        <div class="card col-lg-12 pt-4 pb-4 ps-0 pe-0 form-floating justify-content-center d-flex">
+            <p class="text-center" style="font-size: 20px">
+                <i class="fa-sharp fa-solid fa-circle-info"></i>
+                Ingresa los datos del usuario:
+            </p>
+            <div class="row col-lg-12 m-0 justify-content-center">
+                <div class="col-lg-6 justify-content-center align-content-center">
+                    <div class="form-floating col-lg-12">
+                        <input class="form-control text-center" type="text" id="txtCuenta"/>
+                        <label for="txtCuenta">
+                            Nombre de usuario
+                        </label>
+                    </div>
+                </div>
+                <div class="col-lg-6 justify-content-center align-content-center">
+                    <div class="form-floating col-lg-12">
+                        <input class="form-control text-center" type="text" id="txtEmail"/>
+                        <label for="txtEmail">
+                            Correo
+                        </label>
+                    </div>
+                </div>
+                <div class="col-lg-6 justify-content-center align-content-center mt-3">
+                    <div class="form-floating col-lg-12">
+                        <select class="form-select" id="cmbPersonaId" name="cmbPersonaId">
+                            
+                        </select>
+                        <label for="cmbPersonaId">
+                            Persona
+                        </label>
+                    </div>
+                </div>
+                <div class="col-lg-6 justify-content-center align-content-center mt-3">
+                    <div class="form-floating col-lg-12">
+                        <select class="form-select" id="cmbTipoUsuarioId" name="cmbTipoUsuarioId">
+                            
+                        </select>
+                        <label for="cmbTipoUsuarioId">
+                            Tipo de contraseña
+                        </label>
+                    </div>
+                </div>
+                <div class="col-lg-6 justify-content-center align-content-center mt-3">
+                    <div class="form-floating col-lg-12">
+                        <select class="form-select" id="cmbPerfilId" name="cmbPerfilId">
+                            
+                        </select>
+                        <label for="cmbPerfilId">
+                            Rol
+                        </label>
+                    </div>
+                </div>
+                <div class="col-lg-6 d-flex justify-content-center align-items-center mt-3">
+                    <label class="form-check-label" for="chkActivoUsuario" style="font-size: 20px">
+                        Activo:
+                    </label>
+                    <input class="form-check-input ms-5" type="checkbox" id="chkActivoUsuario">
+                </div>
+                <div class="row col-lg-12 m-0 justify-content-center">
+                    <div class="col-lg-4 mt-3 p-2 align-content-center justify-content-center d-grid">
+                        <button class="btn btn-success align-content-center" id="btnEnviarDatosUsuario" onclick="modulo.guardar();">
+                            Guardar datos
+                        </button>
+                    </div>
+                    <div class="col-lg-4 mt-3 p-2 align-content-center justify-content-center d-grid">
+                        <button class="btn btn-info align-content-center" id="btnLimpiarDatosUsuario" onclick="modulo.limpiar();">
+                            Limpiar campos
+                        </button>
+                    </div>
+                    <div class="col-lg-4 mt-3 p-2 align-content-center justify-content-center d-grid">
+                        <button class="btn btn-danger align-content-center" id="btnEliminarRol" onclick="modulo.eliminar();">
+                            Eliminar Usuario
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 
 <div class="d-flex justify-content-center spinner-container d-none mt-3 mb-3">
