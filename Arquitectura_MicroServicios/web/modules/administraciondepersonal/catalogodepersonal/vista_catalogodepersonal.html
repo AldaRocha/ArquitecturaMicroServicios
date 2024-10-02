@@ -1,13 +1,140 @@
-<div class="container-fluid justify-content-center me-0" style="margin-top: 65px">
-    <h1>
-        Hola Mundo desde Catalogo de Personal
-    </h1>
-</div>
+<!DOCTYPE html>
+<html lang="es">
 
-<div class="d-flex justify-content-center spinner-container d-none mt-3 mb-3">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo de Personal</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+
+        .container {
+            margin-top: 30px;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #343a40;
+        }
+
+        .form-group label {
+            font-weight: bold;
+        }
+
+        .btn-custom {
+            background-color: #007bff;
+            color: white;
+        }
+
+        .btn-custom:hover {
+            background-color: #0056b3;
+        }
+
+        .table {
+            margin-top: 20px;
+        }
+
+        .table tbody tr:hover {
+            background-color: #f1f1f1;
+        }
+
+        .table thead th {
+            background-color: #007bff;
+            color: white;
+        }
+
+        .text-center {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="text-center">Catálogo de Personal</h1>
+
+        <form id="personalForm">
+            <input type="hidden" id="personaId" name="personaId">
+            <div class="form-group">
+                <label for="Nombre">Nombre</label>
+                <input type="text" class="form-control" id="Nombre" name="Nombre" required>
+            </div>
+            <div class="form-group">
+                <label for="Email">Email</label>
+                <input type="email" class="form-control" id="Email" name="Email" required>
+            </div>
+            <div class="form-group">
+                <label for="Telefono">Teléfono</label>
+                <input type="text" class="form-control" id="Telefono" name="Telefono" required>
+            </div>
+            <div class="form-group">
+                <label for="Curp">CURP</label>
+                <input type="text" class="form-control" id="Curp" name="Curp" required>
+            </div>
+            <div class="form-group">
+                <label for="NumeroEmpleado">Número de Empleado</label>
+                <input type="number" class="form-control" id="NumeroEmpleado" name="NumeroEmpleado" required>
+            </div>
+            <div class="form-group">
+                <label for="TipoContrato">Tipo de Contrato</label>
+                <input type="text" class="form-control" id="TipoContrato" name="TipoContrato" required>
+            </div>
+            <div class="form-group">
+                <label for="FechaIngreso">Fecha de Ingreso</label>
+                <input type="datetime-local" class="form-control" id="FechaIngreso" name="FechaIngreso" required>
+            </div>
+            <div class="form-group">
+                <label for="Grupo">Grupo</label>
+                <input type="text" class="form-control" id="Grupo" name="Grupo" required>
+            </div>
+            <div class="form-group">
+                <label for="Estatus">Estatus</label>
+                <input type="number" class="form-control" id="Estatus" name="Estatus" required>
+            </div>
+            <div class="form-group">
+                <label for="AreaId">Área</label>
+                <select class="form-control" id="AreaId" name="AreaId" required>
+                    <option value="">Selecciona un área</option>
+                    <!-- Las áreas se cargarán aquí mediante JavaScript -->
+                </select>
+            </div>
+            <button type="submit" class="btn btn-custom">Guardar <i class="fas fa-save"></i></button>
+        </form>
+
+        <h2 class="mt-4 text-center">Lista de Personal</h2>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Email</th>
+                    <th>Teléfono</th>
+                    <th> Correo </th>
+                 
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody id="personalTableBody">
+                <!-- Las filas de la tabla se llenarán dinámicamente -->
+            </tbody>
+        </table>
+    </div>
+    <div class="d-flex justify-content-center spinner-container d-none mt-3 mb-3">
     <div class="spinner-border" role="status">
         <span class="visually-hidden">
             Loading...
         </span>
     </div>
-</div>
+
+    <script src="catalogodepersonalController.js"></script>
+    
+</body>
+
+</html>

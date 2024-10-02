@@ -1,13 +1,52 @@
-<div class="container-fluid justify-content-center me-0" style="margin-top: 65px">
-    <h1>
-        Hola Mundo desde Areas
-    </h1>
-</div>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Áreas</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h2>Gestión de Áreas</h2>
 
-<div class="d-flex justify-content-center spinner-container d-none mt-3 mb-3">
+        <form id="areaForm">
+            <input type="hidden" id="areaId">
+            <div class="form-group">
+                <label for="nombre">Nombre:</label>
+                <input type="text" class="form-control" id="nombre" required>
+            </div>
+            <div class="form-group">
+                <label for="estatus">Estatus:</label>
+                <select class="form-control" id="estatus">
+                    <option value="1">Activo</option>
+                    <option value="0">Inactivo</option>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-primary">Guardar Área</button>
+        </form>
+
+        <table class="table mt-3" id="areaTable">
+            <thead>
+                <tr>
+                    <th>Area ID</th>
+                    <th>Nombre</th>
+                    <th>Estatus</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Las filas se llenarán dinámicamente -->
+            </tbody>
+        </table>
+    </div>>
+     <div class="d-flex justify-content-center spinner-container d-none mt-3 mb-3">
     <div class="spinner-border" role="status">
         <span class="visually-hidden">
             Loading...
         </span>
     </div>
-</div>
+
+    <script src="areaController.js"></script>
+</body>
+
+</html>
