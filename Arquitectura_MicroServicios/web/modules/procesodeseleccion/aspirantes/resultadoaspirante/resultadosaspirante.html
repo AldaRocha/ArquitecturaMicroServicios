@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Resultados aspirantes</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Alda" />
+    <meta name="date" content="25/09/2024" />
+    <link rel="stylesheet" type="text/css" href="../../../../styles/css/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../styles/js/gft/gft.css" />
+    <link rel="icon" type="image/x-icon" href="../../../../resources/icono.png" />
+    <link rel="stylesheet" href="../../../../styles/css/mystyles.css" />
+  </head>
+  <body>
+    <div class="container mt-4">
+      <h1 style="padding-top: 2rem !important;">Resultados de Aspirantes</h1>
+
+      <div class="form-group">
+        <label for="idBuscar">Buscar por ID:</label>
+        <input type="text" id="idBuscar" class="form-control" placeholder="Ingresa el ID del aspirante" />
+        <button id="btnBuscar" class="btn btn-primary mt-2">Buscar</button>
+      </div>
+
+      <table class="table mt-3" id="tablaResultados">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Correo</th>
+            <th>Teléfono</th>
+            <th>Usuario</th>
+            <th>CURP</th>
+            <th>Carrera</th>
+            <th>Periodo</th>
+            <th>Estatus</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+      <button id="btnVolver" class="btn btn-danger">Volver al inicio de sesión</button>
+    </div>
+
+    <script src="../../../../js/jquery.js"></script>
+    <script src="./resultadosaspiranteController.js"></script>
+  </body>
+</html>

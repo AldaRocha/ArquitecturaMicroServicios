@@ -1,13 +1,61 @@
-<div class="container-fluid justify-content-center me-0" style="margin-top: 65px">
-    <h1>
-        Hola Mundo desde Periodos de Inscripcion
-    </h1>
+<div class="container mt-4">
+  <h1 class="tituloPagina" style="padding-top: 5rem !important;">Catálogo de Periodos de Inscripción</h1>
+  <button id="addPeriodoButton" class="btn btn-primary" data-toggle="modal" data-target="#addEditPeriodoModal">Agregar Periodo</button>
+  <table class="table mt-3" id="tablaPeriodos">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Nombre</th>
+        <th>Descripción</th>
+        <th>Estatus</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Aquí se llenarán los periodos -->
+    </tbody>
+  </table>
+</div>
+
+<!-- Modal para agregar o editar un periodo -->
+<div class="modal fade" id="addEditPeriodoModal" tabindex="-1" role="dialog" aria-labelledby="addEditPeriodoModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="addEditPeriodoModalLabel">Agregar Periodo</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form id="formAddEditPeriodo">
+          <input type="hidden" id="periodoId" />
+          <!-- Campo oculto para el ID del periodo -->
+          <div class="form-group">
+            <label for="nombre">Nombre del Periodo</label>
+            <input type="text" class="form-control" id="nombre" required />
+          </div>
+          <div class="form-group">
+            <label for="descripcion">Descripción</label>
+            <textarea class="form-control" id="descripcion" required></textarea>
+          </div>
+          <div class="form-group">
+            <label for="estatus">Estatus</label>
+            <select class="form-control" id="estatus" required>
+              <option value="Abierta">Abierta</option>
+              <option value="Inactivo">Inactivo</option>
+            </select>
+          </div>
+          <button type="submit" class="btn btn-primary">Agregar</button>
+          <!-- Texto del botón se actualizará dinámicamente -->
+        </form>
+      </div>
+    </div>
+  </div>
 </div>
 
 <div class="d-flex justify-content-center spinner-container d-none mt-3 mb-3">
-    <div class="spinner-border" role="status">
-        <span class="visually-hidden">
-            Loading...
-        </span>
-    </div>
+  <div class="spinner-border" role="status">
+    <span class="visually-hidden"> Loading... </span>
+  </div>
 </div>

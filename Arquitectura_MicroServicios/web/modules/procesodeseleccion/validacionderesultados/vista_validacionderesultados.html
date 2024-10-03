@@ -1,13 +1,28 @@
-<div class="container-fluid justify-content-center me-0" style="margin-top: 65px">
-    <h1>
-        Hola Mundo desde Validacion de Resultados
-    </h1>
+<div class="container mt-4">
+  <h1 class="tituloPagina" style="padding-top: 10%">Lista de Aspirantes Registrados</h1>
+  <table class="table mt-3" id="tablaAspirantes">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th style="width: 216px !important">Nombre</th>
+        <th>Correo</th>
+        <th>Teléfono</th>
+        <th>Usuario</th>
+        <th>CURP</th>
+        <th style="width: 216px !important">Periodo</th>
+        <th style="width: 216px !important">Carrera Deseada</th>
+        <th>Estatus</th>
+        <th style="width: 500px !important">Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Aquí se llenarán los aspirantes -->
+    </tbody>
+  </table>
 </div>
 
 <div class="d-flex justify-content-center spinner-container d-none mt-3 mb-3">
-    <div class="spinner-border" role="status">
-        <span class="visually-hidden">
-            Loading...
-        </span>
-    </div>
+  <div class="spinner-border" role="status">
+    <span class="visually-hidden"> Loading... </span>
+  </div>
 </div>

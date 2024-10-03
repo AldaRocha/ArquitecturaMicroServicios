@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Registro Aspirante</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Alda" />
+    <meta name="date" content="25/09/2024" />
+    <link rel="stylesheet" type="text/css" href="../../../../styles/css/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../styles/js/gft/gft.css" />
+    <link rel="icon" type="image/x-icon" href="../../resources/icono.png" />
+  </head>
+  <body>
+    <div class="container mt-4">
+      <h1>Registro de Aspirantes</h1>
+
+      <!-- Formulario para registrar aspirantes, se oculta hasta que se seleccione un periodo -->
+      <div id="formRegistroAspirante">
+        <form id="registroAspiranteForm">
+          <div class="form-group">
+            <label for="nombre">Nombre</label>
+            <input type="text" class="form-control" id="nombre" required />
+          </div>
+          <div class="form-group">
+            <label for="correo">Correo</label>
+            <input type="email" class="form-control" id="correo" required />
+          </div>
+          <div class="form-group">
+            <label for="telefono">Teléfono</label>
+            <input type="tel" class="form-control" id="telefono" required />
+          </div>
+          <div class="form-group">
+            <label for="usuario">Usuario</label>
+            <input type="text" class="form-control" id="usuario" required />
+          </div>
+          <div class="form-group">
+            <label for="curp">CURP</label>
+            <input type="text" class="form-control" id="curp" required />
+          </div>
+          <div class="form-group">
+            <label for="periodoId">Periodo de Inscripción</label>
+            <select class="form-control" id="periodoId" required>
+              <!-- Las opciones de periodos se llenarán aquí -->
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="carreraDeseada">Carrera Deseada</label>
+            <select class="form-control" id="carreraDeseada" required>
+              <!-- aquí se llenan las carreras que vienen de la BD -->
+            </select>
+          </div>
+          <br />
+          <button type="submit" class="btn btn-primary">Registrarse</button>
+          <button id="btnVolver" class="btn btn-danger">Volver al inicio de sesión</button>
+        </form>
+      </div>
+    </div>
+
+    <script src="../../../../js/jquery.js"></script>
+    <script src="formularioregistroaspiranteController.js"></script>
+  </body>
+</html>
